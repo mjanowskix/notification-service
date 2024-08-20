@@ -1,0 +1,20 @@
+parameters:
+    
+    pushy_api_key: '%env(PUSHY_API_KEY)%'
+    twilio_from_number: '%env(TWILIO_FROM_NUMBER)%'
+    
+    # Notification channels
+    notification_channels:
+        sms:
+            enabled: true
+            providers:
+                - twilio
+                - aws_sns
+        email:
+            enabled: true
+            providers:
+                - aws_ses
+        push:
+            enabled: true
+            providers:
+                - pushy
